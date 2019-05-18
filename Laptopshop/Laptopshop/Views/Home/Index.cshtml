@@ -7,81 +7,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@*<style>
-        .nn-prod {
-            text-align: center;
-            font-size: smaller;
-        }
 
-            .nn-prod .panel-body img {
-                height: 200px;
-                max-width: 95%;
-            }
-
-            .nn-prod .nn-price {
-                font-size: 20px;
-                font-family: Impact;
-                color: white;
-                text-shadow: 0 0 2px black;
-            }
-
-            .nn-prod .panel-footer {
-                height: 50px;
-            }
-
-            .nn-prod .panel {
-                position: relative;
-            }
-
-                .nn-prod .panel .nn-feature {
-                    position: absolute;
-                    top: 0px;
-                    right: 0px;
-                }
-    </style>
-    <div class="box_wrapper">
-        <h1>New Products</h1>
-    </div>
-    <br />
-    @foreach (var item in Model)
-    {
-        <div class="col-sm-4 nn-prod">
-            <div class="panel panel-default">
-                <div class="panel-heading">@item.Name</div>
-                <div class="panel-body">
-                    <a href="/Product/Detail/@item.Id">
-                        <img src="~/images/products/@item.Image" data-product-id="@item.Id" class="gw-draggable" />
-                    </a>
-                </div>
-                <div class="pull-right">
-                    <button class="btn btn-primary btn-xs" data-add-to-cart="@item.Id">
-                        <span class="glyphicon glyphicon-shopping-cart"> ADD TO CART</span>
-                    </button>
-                </div>
-                <div class="panel-footer">
-                    <div class="nn-price pull-left">$@item.UnitPrice </div>
-
-
-                </div>
-
-                @if (item.Special)
-        {
-            <img class="nn-feature"
-                 src="~/images/special_icon.gif" />
-    }
-    else if (item.Latest)
-    {
-            <img class="nn-feature"
-                 src="~/images/new_icon.gif" />
-    }
-    else if (item.Discount > 0)
-    {
-            <img class="nn-feature"
-                 src="~/images/promo_icon.gif" />
-    }
-            </div>
-        </div>
-    }*@
 <div class="banner-w3">
     <div class="demo-1">
         <div id="example1" class="core-slider core-slider__carousel example_1">
@@ -135,35 +61,15 @@
         <div class="col-md-6 ban-bottom3">
             <div class="ban-top">
                 <img src="~/Content 3/images/4Twelve.jpg" class="img-responsive" alt="" />
-                @*<div class="ban-text1">
-                    <h4>Converse</h4>
-                </div>*@
-            </div>
-            @*<div class="ban-img">
-                <div class=" ban-bottom1">
-                    <div class="ban-top">
-                        <img src="~/Content 3/images/img.png" class="img-responsive" alt="" />
-                        <div class="ban-text1">
-                            <h4>Van</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="ban-bottom2">
-                    <div class="ban-top">
-                        <img src="~/Content 3/images/img.png" class="img-responsive" alt="" />
-                        <div class="ban-text1">
-                            <h4>
-                                Adidas
-                            </h4>
-                        </div>
-                    </div>
-                </div>*@
+
                 <div class="clearfix"></div>
-            </div>
         </div>
-        <div class="clearfix"></div>
     </div>
-</div>
+        <div class="clearfix">
+
+        </div>
+ </div>
+
 <!--new-arrivals-->
 <div class="new-arrivals-w3agile">
     <div class="container">
