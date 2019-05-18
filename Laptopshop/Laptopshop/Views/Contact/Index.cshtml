@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Contact.cshtml";
+}
+
+<body>
+
+    <div class="bg-contact2" style="background-image: url(~/Conten4/images/bg-01.jpg);">
+        <div class="container-contact2">
+            <div class="wrap-contact2">
+                <form class="contact2-form validate-form">
+                    <span class="contact2-form-title">
+                        Contact Us
+                    </span>
+
+                    <div class="wrap-input2 validate-input" data-validate="Name is required">
+                        <input class="input2" type="text" name="name">
+                        <span class="focus-input2" data-placeholder="NAME"></span>
+                    </div>
+
+                    <div class="wrap-input2 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input2" type="text" name="email">
+                        <span class="focus-input2" data-placeholder="EMAIL"></span>
+                    </div>
+
+                    <div class="wrap-input2 validate-input" data-validate="Message is required">
+                        <textarea class="input2" name="message"></textarea>
+                        <span class="focus-input2" data-placeholder="MESSAGE"></span>
+                    </div>
+
+                    <div class="container-contact2-form-btn">
+                        <div class="wrap-contact2-form-btn">
+                            <div class="contact2-form-bgbtn"></div>
+                            <button class="contact2-form-btn">
+                                Send Your Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="~/Conten4/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Conten4/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Conten4/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Conten4/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Conten4/js/main.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+    </script>
+
+</body>
+
+
