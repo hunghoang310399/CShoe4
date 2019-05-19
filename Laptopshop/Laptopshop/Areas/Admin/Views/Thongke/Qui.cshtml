@@ -6,8 +6,8 @@
 }
 <section class="content-header">
     <h1>
-        Report
-        Revenue By Quarter In Year: @ViewBag.year
+        Bài báo cáo
+        Doanh thu theo quý trong năm: @ViewBag.year
     </h1>
 
 </section>
@@ -17,7 +17,7 @@
     <div class="box-header">
         @using (Html.BeginForm())
         {
-            <strong> Year: </strong><input type="text" id="datepicker" name="year" />
+            <strong> Năm: </strong><input type="text" id="datepicker" name="year" />
             <input type="submit" value="View" />
         }
 
@@ -30,23 +30,24 @@
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
+
                     <th>
-                        Quarterly
+                        hàng quý
                     </th>
                     <th>
-                        Total Products
+                        Tổng sản phẩm
                     </th>
                     <th>
-                        Total Revenue
+                        Tổng doanh thu
                     </th>
                     <th>
-                        Min Price
+                        Giá tối thiểu
                     </th>
                     <th>
-                        Max Price
+                        Giá tối đa
                     </th>
                     <th>
-                        Avg Price
+                        Giá trung bình
                     </th>
 
 
@@ -56,51 +57,53 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                            @item.Group @if (item.yGroup != 0)
-                            {@item.yGroup}
-                        </td>
-                        <td>
-                            @item.Count
-                        </td>
-                        <td>
-                            @Html.FormatValue(item.Sum, "{0:c}")
-                        </td>
-                        <td>
-                            @Html.FormatValue(item.Min, "{0:c}")
-                        </td>
-                        <td>
-                            @Html.FormatValue(item.Max, "{0:c}")
-                        </td>
-                        <td>
-                            @Html.FormatValue(item.Avg, "{0:c}")
-                        </td>
+                <tr>
+                    <td>
+                        @item.Group @if (item.yGroup != 0)
+                        {@item.yGroup}
+                    </td>
+                    <td>
+                        @item.Count
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Sum) VNĐ
+
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Min) VNĐ
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Max) VNĐ
+
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Avg) VNĐ
+                    </td>
 
 
-                    </tr>
+                </tr>
                 }
 
             </tbody>
             <tfoot>
                 <tr>
                     <th>
-                        Quarterly
+                        hàng quý
                     </th>
                     <th>
-                        Total Products
+                        Tổng sản phẩm
                     </th>
                     <th>
-                        Total Revenue
+                        Tổng doanh thu
                     </th>
                     <th>
-                        Min Price
+                        Giá tối thiểu
                     </th>
                     <th>
-                        Max Price
+                        Giá tối đa
                     </th>
                     <th>
-                        Avg Price
+                        Giá trung bình
                     </th>
 
 

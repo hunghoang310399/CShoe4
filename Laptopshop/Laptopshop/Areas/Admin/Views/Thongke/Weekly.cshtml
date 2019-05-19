@@ -9,7 +9,7 @@
 
 <div class="box">
     <div class="box-header">
-        <strong>Revenue by Weekly</strong>
+        <strong>Doanh thu theo tuần</strong>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -18,10 +18,10 @@
     {
         <fieldset>
             
-            <strong> Week:</strong> <input type="text" id="From" name="date" />
+            <strong> Tuần:</strong> <input type="text" id="From" name="date" />
 
             <input type="submit" value="View" />
-            <h3><strong>Total Revenue: </strong> <strong style="color:red">@Model.Sum(b => b.Sum)$</strong></h3>
+            <h3><strong>Tổng doanh thu: </strong> <strong style="color:red">@Model.Sum(b => b.Sum)$</strong></h3>
         </fieldset>
        
 }
@@ -30,7 +30,7 @@
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <br />
         <table id="example" class="display" style="width:100%">
-            <legend> <strong>Time:</strong> @ViewBag.Order</legend>
+            <legend> <strong>Thời gian:</strong> @ViewBag.Order</legend>
             <thead>
                 <tr>
                     <th>
@@ -59,28 +59,29 @@
             <tbody>
                 @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.weekly.DayOfWeek
-                </td>
-                <td>
-                    @item.Count
-                </td>
-                <td>
-                    @Html.FormatValue(item.Sum, "{0:c}")
-                </td>
-                <td>
-                    @Html.FormatValue(item.Min, "{0:c}")
-                </td>
-                <td>
-                    @Html.FormatValue(item.Max, "{0:c}")
-                </td>
-                <td>
-                    @Html.FormatValue(item.Avg, "{0:c}")
-                </td>
+                <tr>
+                    <td>
+                        @item.weekly.DayOfWeek
+                    </td>
+                    <td>
+                        @item.Count
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Sum) VNĐ
 
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Min) VNĐ
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Max) VNĐ
 
-            </tr>
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Avg) VNĐ
+                    </td>
+
+                </tr>
 }
 
             </tbody>

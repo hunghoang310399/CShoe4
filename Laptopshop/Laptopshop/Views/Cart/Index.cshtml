@@ -86,7 +86,7 @@
                                                     <td width="100">
                                                         <img style="width:100%" src="~/images/products/@p.Image" />
                                                     </td>
-                                                    <td>@p.UnitPrice</td>
+                                                    <td>@string.Format("{0:0,0}", p.UnitPrice)</td>
                                                     <td>@p.Discount</td>
                                                     <td>
                                                         <input type="number" name="name" value="@p.Quantity" min="1" style="width:50px" data-update-cart="@p.Id" />

@@ -42,12 +42,12 @@ namespace Laptopshop.Areas.Admin.Controllers
             }
             return View(product);
         }
-
+        [HttpGet]
         // GET: Admin/Products/Create
         public ActionResult Create()
         {
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name");
-            ViewBag.product_type = new SelectList(db.Sizes, "IDSize", "Size");
+            ViewBag.product_type = db.Sizes.OrderByDescending(x => x.IDSize).ToList();
             return View();
         }
 
@@ -87,7 +87,7 @@ namespace Laptopshop.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Chèn thất bại !");
             }
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name", model.SupplierId);
-            ViewBag.product_type = new SelectList(db.Sizes, "IDSize", "Size", model.IDSize);
+           
             return View(model);
         }
             // GET: Admin/Products/Edit/5
@@ -103,7 +103,7 @@ namespace Laptopshop.Areas.Admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name", product.SupplierId);
-            ViewBag.product_type = new SelectList(db.Sizes, "IDSize", "Size", product.IDSize);
+            ViewBag.product_type = db.Sizes.OrderByDescending(x => x.IDSize).ToList();
             return View(product);
         }
 
@@ -113,7 +113,7 @@ namespace Laptopshop.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit([Bind(Include = "Id,Name,UnitBrief,UnitPrice,Image,ProductDate,Available,Description,SupplierId,Quantity,Discount,Special,Latest,Views")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,Name,IDSize,UnitPrice,Image,ProductDate,Available,Description,SupplierId,Quantity,Discount,Special,Latest,Views")] Product product)
         {
             try
             {
@@ -139,7 +139,7 @@ namespace Laptopshop.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Error");
             }
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name", product.SupplierId);
-            ViewBag.product_type = new SelectList(db.Sizes, "IDSize", "Size", product.IDSize);
+            
             return View(product);
         }
 

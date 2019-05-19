@@ -56,36 +56,36 @@ namespace Laptopshop.Controllers
 
         [AllowAnonymous]
 
-        public ActionResult Facebook()
+        //public ActionResult Facebook()
 
-        {
+        //{
 
-            var fb = new FacebookClient();
+        //    var fb = new FacebookClient();
 
-            var loginUrl = fb.GetLoginUrl(new
+        //    var loginUrl = fb.GetLoginUrl(new
 
-            {
-
-
-
-
-                client_id = "919134721597050",
-
-                client_secret = "48322d66a0188fb4de97b85a4d0be9fc",
-
-                redirect_uri = RediredtUri.AbsoluteUri,
-
-                response_type = "code",
-
-                scope = "email"
+        //    {
 
 
 
-            });
 
-            return Redirect(loginUrl.AbsoluteUri);
+        //        client_id = "919134721597050",
 
-        }
+        //        client_secret = "48322d66a0188fb4de97b85a4d0be9fc",
+
+        //        redirect_uri = RediredtUri.AbsoluteUri,
+
+        //        response_type = "code",
+
+        //        scope = "email"
+
+
+
+        //    });
+
+        //    return Redirect(loginUrl.AbsoluteUri);
+
+        //}
      
         public ActionResult About()
         {

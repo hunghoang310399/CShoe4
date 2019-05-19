@@ -6,8 +6,8 @@
 }
 <section class="content-header">
     <h1>
-        Report
-        <small>Revenue By Product</small>
+        Báo cáo
+        <small>Doanh thu theo sản phẩm</small>
     </h1>
 
 </section>
@@ -17,16 +17,18 @@
 
 <div class="box">
     <div class="box-header">
-        <strong>Revenue by Product</strong>
+        <strong>
+            Doanh thu theo sản phẩm
+        </strong>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
         @using (Html.BeginForm())
         {
             <fieldset>
-                <legend>Time</legend>
-                <strong> From:</strong> <input type="text" id="From" name="From" />
-                <strong> To:</strong>   <input type="text" id="To" name="To" />
+                <legend>Thời gian</legend>
+                <strong> Từ:</strong> <input type="text" id="From" name="From" />
+                <strong> Đến:</strong>   <input type="text" id="To" name="To" />
                 <input type="submit" value="View" />
             </fieldset>
 
@@ -38,22 +40,23 @@
             <thead>
                 <tr>
                     <th>
-                        Product
+                        Sản phẩm
+                    </th>
+
+                    <th>
+                        Tổng sản phẩm
                     </th>
                     <th>
-                        Total Products
+                        Tổng doanh thu
                     </th>
                     <th>
-                        Total Revenue
+                        Giá tối thiểu
                     </th>
                     <th>
-                        Min Price
+                        Giá tối đa
                     </th>
                     <th>
-                        Max Price
-                    </th>
-                    <th>
-                        Avg Price
+                        Giá trung bình
                     </th>
 
 
@@ -72,16 +75,18 @@
                             @item.Count
                         </td>
                         <td>
-                            @Html.FormatValue(item.Sum, "{0:c}")
+                            @string.Format("{0:0,0}",item.Sum) VNĐ
+                          
                         </td>
                         <td>
-                            @Html.FormatValue(item.Min, "{0:c}")
+                            @string.Format("{0:0,0}", item.Min) VNĐ                            
                         </td>
                         <td>
-                            @Html.FormatValue(item.Max, "{0:c}")
+                            @string.Format("{0:0,0}", item.Max) VNĐ
+
                         </td>
                         <td>
-                            @Html.FormatValue(item.Avg, "{0:c}")
+                            @string.Format("{0:0,0}", item.Avg) VNĐ
                         </td>
 
 
@@ -92,22 +97,23 @@
             <tfoot>
                 <tr>
                     <th>
-                        Product
+                        Sản phẩm
+                    </th>
+
+                    <th>
+                        Tổng sản phẩm
                     </th>
                     <th>
-                        Total Products
+                        Tổng doanh thu
                     </th>
                     <th>
-                        Total Revenue
+                        Giá tối thiểu
                     </th>
                     <th>
-                        Min Price
+                        Giá tối đa
                     </th>
                     <th>
-                        Max Price
-                    </th>
-                    <th>
-                        Avg Price
+                        Giá trung bình
                     </th>
 
 
@@ -141,10 +147,10 @@
             theme: "light2",
             animationEnabled: true,
             title: {
-                text: "Revenue By Product"
+                text: "Doanh thu theo sản phẩm"
             },
             subtitles: [{
-                text: "Laptop Shop",
+                text: "4Twe",
                 fontSize: 16
             }],
             data: [{
@@ -152,7 +158,7 @@
                 indexLabelFontSize: 18,
                 radius: 80,
                 indexLabel: "{label} - {y}",
-                yValueFormatString: "###0.0\"%\"",
+                yValueFormatString: "###,###\"VNĐ\"",
                 click: explodePie,
                 dataPoints: [
                      @foreach (var r in Model)
