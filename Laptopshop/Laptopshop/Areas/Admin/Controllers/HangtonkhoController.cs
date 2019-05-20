@@ -15,6 +15,11 @@ namespace Laptopshop.Areas.Admin.Controllers
 
         public ActionResult bySuppliers()
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             var model = db.Products.GroupBy(p => p.Supplier).Select(g => new Report
             {
                 Group = g.Key.Name,
@@ -28,6 +33,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         }
         public ActionResult byProducts()
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             var model = db.Products.GroupBy(p => p.Name).Select(g => new Report
             {
                 Group = g.Key,

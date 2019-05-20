@@ -31,6 +31,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Products/Details/5
         public ActionResult Details(int? id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -46,8 +51,13 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Products/Create
         public ActionResult Create()
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name");
-            ViewBag.product_type = db.Sizes.OrderByDescending(x => x.IDSize).ToList();
+            ViewBag.IDSize = new SelectList(db.Sizes,"IDSize","Size1");
             return View();
         }
 
@@ -87,12 +97,17 @@ namespace Laptopshop.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Chèn thất bại !");
             }
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name", model.SupplierId);
-           
+            ViewBag.IDSize = new SelectList(db.Sizes, "IDSize", "Size1", model.IDSize);
             return View(model);
         }
             // GET: Admin/Products/Edit/5
             public ActionResult Edit(int? id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -103,7 +118,7 @@ namespace Laptopshop.Areas.Admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name", product.SupplierId);
-            ViewBag.product_type = db.Sizes.OrderByDescending(x => x.IDSize).ToList();
+            ViewBag.IDSize = new SelectList(db.Sizes, "IDSize", "Size1", product.IDSize);
             return View(product);
         }
 
@@ -139,13 +154,18 @@ namespace Laptopshop.Areas.Admin.Controllers
                 ModelState.AddModelError("", "Error");
             }
             ViewBag.SupplierId = new SelectList(db.Suppliers, "Id", "Name", product.SupplierId);
-            
+            ViewBag.IDSize = new SelectList(db.Sizes, "IDSize", "Size1", product.IDSize);
             return View(product);
         }
 
         // GET: Admin/Products/Delete/5
         public ActionResult Delete(int? id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -166,7 +186,7 @@ namespace Laptopshop.Areas.Admin.Controllers
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Products/Index");
         }
 
         protected override void Dispose(bool disposing)

@@ -8,6 +8,7 @@ namespace Laptopshop.Controllers
 {
     public class CartController : Controller
     {
+        private const  string CartSession = "CartSession";
         public ActionResult Add(int Id)
         {
             ShoppingCart.Cart.Add(Id);

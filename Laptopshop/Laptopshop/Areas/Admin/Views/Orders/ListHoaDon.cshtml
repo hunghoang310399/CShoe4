@@ -51,29 +51,29 @@
                     </td>
                     <td>
                         @{if
-                  (item.DeliveryStatus == "Delivering")
-                        {
+                                (item.DeliveryStatus == "Delivering")
+                            {
 
-                            <span class="label label-success"> @Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
-                    }
-                    else
-                    {
-                        <span class="label label-danger">@Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
-                }
+                                <span class="label label-success"> @Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
+                            }
+                            else
+                            {
+                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
+                            }
                         }
                     </td>
 
                     <td>
                         @{
-                        if (item.DeliveryStatus == "Delivering")
-                        {
-                            @Html.ActionLink("Cập nhật trạng thái giao hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
-                    }
+                            if (item.DeliveryStatus == "Delivering")
+                            {
+                                @Html.ActionLink("Cập nhật trạng thái giao hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
+                            }
 
-                    else if (item.DeliveryStatus == "Đã giao hàng và khách hàng đã thanh toán đủ")
-                    {
+                            else if (item.DeliveryStatus == "Đã giao hàng và khách hàng đã thanh toán đủ")
+                            {
 
-                    }
+                            }
                         }
                         | @Html.ActionLink("Chi tiết đặt hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
 

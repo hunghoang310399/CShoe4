@@ -23,6 +23,11 @@ namespace Laptopshop.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             Order hd = db.Orders.Find(id);
             if (hd == null)
             {
@@ -52,6 +57,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         }
         public ActionResult Details(int Id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             var model = db.Orders.Find(Id);
             return View(model);
         }

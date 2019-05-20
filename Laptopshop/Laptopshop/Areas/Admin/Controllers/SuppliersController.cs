@@ -28,6 +28,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Suppliers/Details/5
         public ActionResult Details(string id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -43,6 +48,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Suppliers/Create
         public ActionResult Create()
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             var model = new Supplier();
             
             return View(model);
@@ -82,6 +92,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Suppliers/Edit/5
         public ActionResult Edit(string id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -130,6 +145,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Suppliers/Delete/5
         public ActionResult Delete(string id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

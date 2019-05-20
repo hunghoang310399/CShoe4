@@ -28,6 +28,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Customers/Details/5
         public ActionResult Details(string id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -43,6 +48,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Customers/Create
         public ActionResult Create()
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             return View();
         }
 
@@ -66,6 +76,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Customers/Edit/5
         public ActionResult Edit(string id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,6 +129,11 @@ namespace Laptopshop.Areas.Admin.Controllers
         // GET: Admin/Customers/Delete/5
         public ActionResult Delete(string id)
         {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -139,6 +159,7 @@ namespace Laptopshop.Areas.Admin.Controllers
 
         protected override void Dispose(bool disposing)
         {
+          
             if (disposing)
             {
                 db.Dispose();
