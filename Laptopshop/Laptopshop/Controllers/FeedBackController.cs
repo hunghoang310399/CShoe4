@@ -32,6 +32,7 @@ namespace Laptopshop.Controllers
             {
 
                 ModelState.AddModelError("", "Gữi phản hồi thất bại !");
+        
             }
               
             return View();
