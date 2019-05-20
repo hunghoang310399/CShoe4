@@ -114,7 +114,7 @@
                                 <fieldset>
                                     @foreach (var p in Model.Supplier.Products)
                                     {
-                                        <a href="/Product/Detail/@p.Id">
+                                        <a href="~/Product/Detail/@p.Id">
                                             <img src="~/images/products/@p.Image" />
                                         </a>
                                     }
@@ -124,7 +124,7 @@
                                 <fieldset>
                                     @foreach (var p in Model.Supplier.Products)
                                     {
-                                        <a href="/Product/Detail/@p.Id">
+                                        <a href="~/Product/Detail/@p.Id">
                                             <img src="~/images/products/@p.Image" />
                                         </a>
                                     }
@@ -134,7 +134,7 @@
                                 <fieldset>
                                     @foreach (var p in ViewBag.Views)
                                     {
-                                        <a href="/Product/Detail/@p.Id">
+                                        <a href="~/Product/Detail/@p.Id">
                                             <img src="~/images/products/@p.Image" />
                                         </a>
                                     }
@@ -173,7 +173,7 @@
                             <div class="panel-heading">@item.Name</div>
                             <figure>
                                 <div class="panel-body">
-                                    <a href="/Product/Detail/@item.Id" class="new-gri">
+                                    <a href="~/Product/Detail/@item.Id" class="new-gri">
                                         <div class="ban-top">
                                             <img width="150" height="200" src="~/images/products/@item.Image" data-product-id="@item.Id" class="gw-draggable" />
                                         </div>
@@ -186,7 +186,7 @@
                                 <div class="starbox small ghosting"> </div>
                             </div>
                             <div class="women">
-                                <h6><a href="/Product/Detail/@item.Id">Details</a></h6>
+                                <h6><a href="~/Product/Detail/@item.Id">Details</a></h6>
 
                                 @if (item.Discount == 0)
                                 {

@@ -28,15 +28,12 @@
 
                 </div>
             </div>
-            <div class="core-slider_nav">
-                <div class="core-slider_arrow core-slider_arrow__right"></div>
-                <div class="core-slider_arrow core-slider_arrow__left"></div>
-            </div>
+          
             <div class="core-slider_control-nav"></div>
         </div>
     </div>
-    <link href="/Content 3/css/coreSlider.css" rel="stylesheet" type="text/css" />
-    <script src="/Content 3/js/coreSlider.js"></script>
+    <link href="~/Content 3/css/coreSlider.css" rel="stylesheet" type="text/css" />
+    <script src="~/Content 3/js/coreSlider.js"></script>
     <script>
         $('#example1').coreSlider({
             pauseOnHover: false,
@@ -86,7 +83,7 @@
                         <div class="panel-heading">@item.Name</div>
                         <figure>
                             <div class="panel-body">
-                                <a href="/Product/Detail/@item.Id" class="new-gri">
+                                <a href="~/Product/Detail/@item.Id" class="new-gri">
                                     <div class="ban-top">
                                         <img width="150" height="150" src="~/images/products/@item.Image" data-product-id="@item.Id" class="gw-draggable" />
                                     </div>
@@ -99,7 +96,7 @@
                             <div class="starbox small ghosting"> </div>
                         </div>
                         <div class="women">
-                            <h6><a href="/Product/Detail/@item.Id">Chi tiết</a></h6>
+                            <h6><a href="~/Product/Detail/@item.Id">Chi tiết</a></h6>
                             @if (item.Discount == 0)
                             {
                                 <p> <h3><em style="color:red" class="item_price">@string.Format("{0:0,0}", @item.UnitPrice) VNĐ</em></h3></p>

@@ -11,22 +11,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <title>4Twelve</title>
     <link rel="shortcut icon" href="~/Content 3/images/iconbaner.png">
     <!--css-->
-    <link href="/Content 3/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/Content 3/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/Content 3/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content 3/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content 3/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content 3/css/font-awesome.css" rel="stylesheet" />
     <!--css-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <script src="/Content 3/js/jquery.min.js"></script>
+    <script src="~/Content 3/js/jquery.min.js"></script>
     <link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css' />
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css' />
     <!--search jQuery-->
-    <script src="/Content 3/js/main.js"></script>
+    <script src="~/Content 3/js/main.js"></script>
     <!--search jQuery-->
-    <script src="/Content 3/js/responsiveslides.min.js"></script>
+    <script src="~/Content 3/js/responsiveslides.min.js"></script>
     <script src="~/Scripts/shopping-cart.js"></script>
 
     <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
@@ -42,9 +42,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!--mycart-->
-    <script type="text/javascript" src="/Content 3/js/bootstrap-3.1.1.min.js"></script>
+    <script type="text/javascript" src="~/Content 3/js/bootstrap-3.1.1.min.js"></script>
     <!-- cart -->
-    <script src="/Content 3/js/simpleCart.min.js"></script>
+    <script src="~/Content 3/js/simpleCart.min.js"></script>
     <!-- cart -->
     <!--start-rate-->
     <script src="/Content 3/js/jstarbox.js"></script>
@@ -96,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="container">
                 <div class="logo-nav">
                     <div class="logo-nav-left">
-                        <h1><a href="/Home/Index">4Twelve Shop <span>   Shop anywhere</span></a></h1>
+                        <h1><a href="~/Home/Index">4Twelve Shop <span>   Shop anywhere</span></a></h1>
                     </div>
                     <div class="logo-nav-left1">
                         <nav class="navbar navbar-default">
@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </nav>
                     </div>
                     @Html.Partial("_Search")
-                    @Html.Partial("_CartInfo")
+               
                     <div class="clearfix"> </div>
                 </div>
             </div>
@@ -155,10 +155,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="col-md-3 footer-grid">
                     <h4>Tài khoản của tôi</h4>
                     <ul>
-
-                        <li><a href="/Account/Login">Đăng nhập</a></li>
-                        <li><a href="/Account/Register"> Tạo tài khoản </a></li>
-                        <li><a href="/FeedBack/SendFeedback"> Phản Hồi </a></li>
+                        <li>
+                            <a href="Account/Login">Đăng nhập</a>
+                            <a href="Account/Register"> Tạo tài khoản </a>
+                            <a href="FeedBack/SendFeedback"> Phản Hồi </a>
+                        </li>
+                    
 
                     </ul>
                 </div>
@@ -194,13 +196,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <p>&copy; 2019 4Twelve Shop . All rights reserved | Design by <a href="">4Twelve Team</a></p>
             </div>
             <div class="copy-right">
-                <img src="images/card.png" alt="" />
+                <img src="~/images/card.png" alt="" />
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
     <!--copy-->
-    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+    @*<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-info">
                 <div class="modal-header">
@@ -298,7 +300,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class="entry value-plus1 active">&nbsp;</div>
                                         </div>
                                     </div>
-                                    <!--quantity-->
+                                    <!--quantity-->*@
                                     <script>
                                         $('.value-plus1').on('click', function () {
                                             var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10) + 1;
@@ -311,7 +313,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         });
                                     </script>
                                     <!--quantity-->
-                                </div>
+                                @*</div>
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="women">
@@ -327,8 +329,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
+    </div>*@
+    @*<div class="modal fade" id="myModal3" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-info">
                 <div class="modal-header">
@@ -425,7 +427,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class="entry value1"><span>1</span></div>
                                             <div class="entry value-plus1 active">&nbsp;</div>
                                         </div>
-                                    </div>
+                                    </div>*@
                                     <!--quantity-->
                                     <script>
                                         $('.value-plus1').on('click', function () {
@@ -439,7 +441,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         });
                                     </script>
                                     <!--quantity-->
-                                </div>
+                                @*</div>
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="women">
@@ -455,7 +457,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 
 </body>
 @RenderSection("scripts", required: false)
