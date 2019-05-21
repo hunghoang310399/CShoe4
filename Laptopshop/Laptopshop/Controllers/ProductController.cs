@@ -26,7 +26,7 @@ namespace Laptopshop.Controllers
         //}
         public ActionResult ListBySupplier(String Id, int? trang)
         {
-            Session["BackUrl"] = "/Product/ListBySupplier/" + Id;
+            Session["BackUrl"] = "~/Product/ListBySupplier/" + Id;
             int sosptrentrang = 6;
             int stttrang = (trang ?? 1);
             var model = db.Products.Where(p => p.SupplierId == Id).ToList();
@@ -39,7 +39,7 @@ namespace Laptopshop.Controllers
         {
             int sosptrentrang = 6;
             int stttrang = (trang ?? 1);
-            Session["BackUrl"] = "/Product/ListBySpecial/" + Id;
+            Session["BackUrl"] = "~/Product/ListBySpecial/" + Id;
             List<Product> model;
             switch (Id)
             {
@@ -80,7 +80,7 @@ namespace Laptopshop.Controllers
         public ActionResult Search(String Keywords, int? trang)
         {
             @ViewBag.Key = Keywords;
-            Session["BackUrl"] = "/Product/Search?Keywords=" + Keywords;
+            Session["BackUrl"] = "~/Product/Search?Keywords=" + Keywords;
             int sosptrentrang = 6;
             int stttrang = (trang ?? 1);
             var model = db.Products

@@ -74,14 +74,14 @@ namespace Laptopshop.Areas.Admin.Controllers
             }
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            Order order = db.Orders.Find(id);
+            if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(order);
         }
 
         // POST: Admin/Products/Delete/5
@@ -89,10 +89,10 @@ namespace Laptopshop.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
+            Order order = db.Orders.Find(id);
+            db.Orders.Remove(order);
             db.SaveChanges();
-            return RedirectToAction("/Products/Index");
+            return RedirectToAction("ListHoaDon");
         }
     }
 }

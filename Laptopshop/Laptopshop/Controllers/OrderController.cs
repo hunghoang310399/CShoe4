@@ -22,7 +22,8 @@ namespace Laptopshop.Controllers
             var model = new Order();
             if (XUser.Authenticated) {
                 var user = Session["User"] as Customer;
-               
+                if (user == null)
+              
                 model.OrderDate = DateTime.Now;
                 model.Amount = ShoppingCart.Cart.Amount;
                 model.CustomerId = user.Id;

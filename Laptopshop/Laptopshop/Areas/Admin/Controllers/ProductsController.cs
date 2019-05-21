@@ -186,7 +186,7 @@ namespace Laptopshop.Areas.Admin.Controllers
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
             db.SaveChanges();
-            return RedirectToAction("/Products/Index");
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
