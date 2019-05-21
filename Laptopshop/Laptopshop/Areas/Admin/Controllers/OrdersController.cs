@@ -65,5 +65,34 @@ namespace Laptopshop.Areas.Admin.Controllers
             var model = db.Orders.Find(Id);
             return View(model);
         }
+        public ActionResult Delete(int? id)
+        {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
+            if (id == null)
+            {
+                
+            }
+            Order order = db.Orders.Find(id);
+            if (order == null)
+            {
+                return HttpNotFound();
+            }
+            return View(order);
+        }
+
+        // POST: Admin/Products/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Order order = db.Orders.Find(id);
+            db.Orders.Remove(order);
+            db.SaveChanges();
+            return RedirectToAction("ListHoaDon");
+        }
     }
 }

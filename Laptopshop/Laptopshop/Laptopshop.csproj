@@ -1673,6 +1673,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\QLFeedBack\Index.cshtml" />
     <Content Include="Areas\Admin\Views\QLFeedBack\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

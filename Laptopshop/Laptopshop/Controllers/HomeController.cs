@@ -22,7 +22,7 @@ namespace Laptopshop.Controllers
         public ActionResult Index(int? trang)
         {
             //return View(ListSanPham);
-            Session["BackUrl"] = "/Home/Index/";
+            Session["BackUrl"] = "~/Home/Index/";
             int sosptrentrang = 8;
             int stttrang = (trang ?? 1);
             return View(db.Products.ToList().OrderBy(x => x.Id).ToPagedList(stttrang, sosptrentrang));
