@@ -75,9 +75,9 @@
 
                             }
                         }
-                        | @Html.ActionLink("Chi tiết đặt hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
+                        | @Html.ActionLink("Chi tiết đơn hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
 
-
+                        @Html.ActionLink("Xóa đơn hàng", "Delete", new { id = item.Id }, new { @class = "btn btn-warning" })
                     </td>
                 </tr>
         }
