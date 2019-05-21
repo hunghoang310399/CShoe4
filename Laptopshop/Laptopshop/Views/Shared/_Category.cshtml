@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Laptopshop.Models.Supplier>
+
+@*<div class="panel panel-default">
+    <div class="panel-heading">
+        <span class="glyphicon glyphicon-th-list"></span>
+        <strong>Chủng loại</strong>
+    </div>
+
+    <div class="list-group">
+        @foreach (var item in Model)
+        {
+            <a href="/Product/ListByCategory/@item.Id" class="list-group-item">@item.NameVN</a>
+        }
+    </div>
+</div>*@
+
+<div class="list-categories">
+  
+     
+        <h3 class="cate"><strong><center>Thương hiệu</center></strong></h3>
+        
+        @foreach (var item in Model)
+        {
+            <div class="first-list">
+                <div class="div_2"><a href="~/Product/ListByCategory/@item.Id">@item.Name</a></div>
+                <div class="div_img">
+
+                </div><div class="clear"></div>
+            </div>
+        }
+    </div>

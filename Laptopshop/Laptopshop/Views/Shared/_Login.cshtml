@@ -1,0 +1,82 @@
+﻿<div class="top-right">
+    <ul>
+        <li>
+            <a href="~/Cart/Index">
+                <img id="cart-img" src="~/Content 3/images/bag.png" alt="" />
+
+
+
+
+                <span id="cart-cnt">@ShoppingCart.Cart.Count </span> Sản phẩm
+
+                <span id="cart-amt">@string.Format("{0:0,0}", @ShoppingCart.Cart.Amount) </span> VNĐ
+            </a>
+        </li>
+
+        @if (!XUser.Authenticated && Session["AccessToken"] == null)
+        {
+            <li><a href="~/Account/Login">Đăng nhập</a></li>
+            <li><a href="~/Account/Register"> Tạo tài khoãn </a></li>
+            <li><a href="~/FeedBack/SendFeedback"> Phản Hồi </a></li>
+        }
+        else
+        {
+            <li class="dropdown">
+                @if (XUser.Authenticated)
+                {
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Chào mừng: @Session["Id"]<b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu multi-column col_1_of_2">
+                        <div class="row">
+                            <div class="col-sm-12  multi-gd-img">
+                                <ul class="multi-column-dropdown">
+
+                                    <li><a href="~/Account/Logout"> Đăng xuất</a></li>
+                                    <li><a href="~/Account/Change">Đổi mật khẩu</a></li>
+                                    <li><a href="~/Account/Edit">Cập nhật thông tin</a></li>
+
+                                    <li><a href="~/Order/List">Danh sách đặt hàng</a></li>
+                                    <li><a href="~/Order/Items">Sản phẩm đã mua</a></li>
+
+                                </ul>
+                            </div>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </ul>
+                }
+                else
+                {
+                    if (Session["AccessToken"] != null)
+                    {
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Chào mừng:<img style="border-radius:40px" width="25" height="25" src="@Session["picture"]" /> @Session["first_name"] @Session["lastname"] <b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column col_1_of_2">
+                            <div class="row">
+                                <div class="col-sm-9 ">
+                                    <ul class="multi-column-dropdown">
+
+                                        <li><a href="~/Account/Logout">Đăng xuất</a></li>
+
+                                        <li><a href="~/Order/ListFacebook">Danh sách đặt hàng</a></li>
+                                        <li><a href="~/Order/ItemsFacebook">Sản Phẩm đã mua</a></li>
+
+                                    </ul>
+                                </div>
+
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </ul>
+                    }
+                }
+
+            </li>
+        }
+
+    </ul>
+</div>
+<style id="cart-fly">
+</style>

@@ -1,0 +1,222 @@
+﻿!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>LAPTOP SHOPPING</title>
+    <link href="/Content2/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='//fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+    <link href="/Content/MyStyle/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Customize styles -->
+    <link href="/Content/MyStyle/style.css" rel="stylesheet" />
+    <!-- font awesome styles -->
+    <link href="/Content/MyStyle/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!--slider-->
+    <script src="/Content2/js/jquery.min.js"></script>
+    <script src="/Content2/js/script.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="/Content/MyStyle/assets/ico/favicon.ico">
+    <!--theme-style-->
+    <!--//theme-style-->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+</head>
+<body>
+    <div class="header-bg">
+        <div class="wrap">
+            <div class="h-bg">
+                <div class="total">
+                    <div class="header">
+
+                        <div class="header-right">
+                            <ul class="follow_icon">
+                                <li><a href="#"><img src="/Content2/images/icon.png" alt="" /></a></li>
+                                <li><a href="#"><img src="/Content2/images/icon1.png" alt="" /></a></li>
+                                <li><a href="#"><img src="/Content2/images/icon2.png" alt="" /></a></li>
+                                <li><a href="#"><img src="/Content2/images/icon3.png" alt="" /></a></li>
+                            </ul>
+                        </div><div class="clear"></div>
+                        <div class="header-bot">
+                            <div class="logo">
+                                <a href="/Home/Index"><img src="~/Content2/images/a.png" alt="" /></a>
+                            </div>
+                            <div class="search">
+
+                                @Html.Partial("_Search")
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <div class="top-nav">
+                            <ul>
+                                <li class="active"><a href="/Home/Index">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Specials <span class="caret"></span></a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Product/ListBySpecial/BEST" class="list-group-item">Hàng bán chạy</a></li>
+
+                                        <li> <a href="/Product/ListBySpecial/LATEST" class="list-group-item">Hàng mới</a></li>
+
+                                        <li><a href="/Product/ListBySpecial/PROMO" class="list-group-item">Hàng giảm giá</a></li>
+
+                                        <li><a href="/Product/ListBySpecial/SPECIAL" class="list-group-item">Hàng đặc biệt</a></li>
+
+                                        <li><a href="/Product/ListBySpecial/VIEWS" class="list-group-item">Hàng xem nhiều</a></li>
+
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+
+                                <li class="dropdown">
+                                    @if (!XUser.Authenticated)
+                                    {
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Tài khoản <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Account/Login">Đăng nhập</a></li>
+                                            <li><a href="/Account/Forgot">Quên mật khẩu</a></li>
+                                            <li><a href="/Account/Register">Đăng ký thành viên</a></li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Welcome: @Session["Id"] <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="/Account/Logout">Đăng xuất</a></li>
+                                            <li><a href="/Account/Change">Đổi mật khẩu</a></li>
+                                            <li><a href="/Account/Edit">Cập nhật hồ sơ</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="/Order/List">Đơn hàng</a></li>
+                                            <li><a href="/Order/Items">Hàng đã mua</a></li>
+                                        </ul>
+                                    }
+
+
+                            </ul>
+                            </li>
+
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="banner-top">
+                        <div class="header-bottom">
+                            <div class="header_bottom_right_images">
+                                <div id="slideshow">
+                                    <div id="myCarousel" class="carousel slide homCar">
+                                        <div class="carousel-inner">
+                                            <div class="item">
+                                                <img style="width:100%" src="~/Content/Image/1.jpg" alt="bootstrap ecommerce templates">
+                                                <div class="carousel-caption">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img style="width:100%" src="~/Content/Image/2.jpg" alt="bootstrap ecommerce templates">
+                                                <div class="carousel-caption">
+                                                </div>
+                                            </div>
+                                            <div class="item active">
+                                                <img style="width:100%" src="~/Content/Image/4.png" alt="bootstrap ecommerce templates">
+                                                <div class="carousel-caption">
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <img style="width:100%" src="~/Content/Image/3.jpg" alt="bootstrap templates">
+                                                <div class="carousel-caption">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="arrow previous" href="#myCarousel" data-slide="prev"></a>
+                                        <a class="arrow next" href="#myCarousel" data-slide="next"></a>
+                                    </div>
+                                    @*<span class=""></span>
+                                        <span class=""></span>*@
+                                </div>
+                                <div class="content-wrapper">
+                                    <div class="content-top">
+                                       
+                                        <br />
+                                        @RenderBody()
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="header-para">
+                                <div class="categories">
+                                    @Html.Action("_Supplier", "Home")
+                                    @Html.Partial("_CartInfo")
+                                    <div class="box-title">
+                                        <h1><span class="title-icon"></span><a href="#">Branches</a></h1>
+                                    </div>
+                                    <div class="section group example">
+                                        <div>
+                                            <img src="~/images/products/1063.jpg" alt="" />
+                                            <img src="~/images/products/1061.jpg" alt="" />
+
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <footer class="footer">
+                                <div class="row-fluid">
+                                    <div class="span2">
+                                        <h5>Giới thiệu về chúng tôi</h5>
+                                        <a href="#">Giới thiệu Dull Store</a><br>
+                                        <a href="#">Quy chế hoạt động</a><br>
+                                        <a href="#">Địa chỉ</a><br>
+                                        <a href="#">Giảm giá</a><br>
+                                    </div>
+                                    <div class="span2">
+                                        <h5>Dành cho người mua</h5>
+                                        <a href="contact.html">Bảo vệ người mua</a><br>
+                                        <a href="#"></a>Quy định đối với người mua<br>
+                                        <a href="#">Giải quyết khiếu nại</a><br>
+                                        <a href="#">Hướng dẫn người mua</a><br>
+                                        <a href="#">Câu hỏi thường gặp</a><br>
+                                    </div>
+                                    <div class="span2">
+                                        <h5>Dành cho người bán </h5>
+                                        <a href="#">Quy định đối với nhân viên</a> <br>
+                                        <a href="#">Chính sách bán hàng</a><br>
+                                        <a href="#">Hệ thống tiêu chí kiểm duyệt</a><br>
+                                        <a href="#">Các mức chế tài vi phạm</a><br>
+                                    </div>
+                                    <div class="span6">
+                                        <h5>Copyright © 2017.DullStore</h5>
+                                        <p>Công ty Cổ phần TaiNganh, thành viên tập đoàn Tài Group</p>
+                                        <p>Địa chỉ:Số 55/31/1 Thành Mỹ Phường 8, Tân Bình, HCM.</p>
+                                        <p>Email: Taihtgcs15415@fpt.edu.vn</p>
+                                    </div>
+                                </div>
+                            </footer>
+                            <div class="footer-bottom">
+                                <div class="copy">
+                                    <p>&copy 2013 Cars Online . All rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

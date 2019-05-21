@@ -1,0 +1,199 @@
+﻿@model IEnumerable<Report>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<section class="content-header">
+    <h1>
+        Bài báo cáo
+        Doanh thu theo quý trong năm: @ViewBag.year
+    </h1>
+
+</section>
+
+
+<div class="box">
+    <div class="box-header">
+        @using (Html.BeginForm())
+        {
+            <strong> Năm: </strong><input type="text" id="datepicker" name="year" />
+            <input type="submit" value="View" />
+        }
+
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+
+                    <th>
+                        hàng quý
+                    </th>
+                    <th>
+                        Tổng sản phẩm
+                    </th>
+                    <th>
+                        Tổng doanh thu
+                    </th>
+                    <th>
+                        Giá tối thiểu
+                    </th>
+                    <th>
+                        Giá tối đa
+                    </th>
+                    <th>
+                        Giá trung bình
+                    </th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.Group @if (item.yGroup != 0)
+                        {@item.yGroup}
+                    </td>
+                    <td>
+                        @item.Count
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Sum) VNĐ
+
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Min) VNĐ
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Max) VNĐ
+
+                    </td>
+                    <td>
+                        @string.Format("{0:0,0}", item.Avg) VNĐ
+                    </td>
+
+
+                </tr>
+                }
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        hàng quý
+                    </th>
+                    <th>
+                        Tổng sản phẩm
+                    </th>
+                    <th>
+                        Tổng doanh thu
+                    </th>
+                    <th>
+                        Giá tối thiểu
+                    </th>
+                    <th>
+                        Giá tối đa
+                    </th>
+                    <th>
+                        Giá trung bình
+                    </th>
+
+
+
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.box-body -->
+</div>
+
+@section scripts{
+    <script>
+    window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "Report By Quarter",
+                horizontalAlign: "center"
+            },
+            data: [{
+                type: "doughnut",
+                startAngle: 60,
+                //innerRadius: 60,
+                indexLabelFontSize: 17,
+                indexLabel:"Quarter "+ "{label}: #percent%",
+                toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                dataPoints: [
+                     @foreach (var r in Model)
+                     {
+                        <text> { y: @r.Sum, label: @r.yGroup },</text>
+
+              }
+                ]
+            }]
+        });
+        chart.render();
+
+    }
+    </script>
+    <script>
+        $(function () {
+            $('#datepicker').datepicker({
+                changeYear: true,
+                showButtonPanel: true,
+                dateFormat: 'yy',
+                onClose: function (dateText, inst) {
+                    var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                    $(this).datepicker('setDate', new Date(year, 1));
+                }
+            });
+
+            $("#datepicker").focus(function () {
+                $(".ui-datepicker-month").hide();
+                $(".ui-datepicker-calendar").hide();
+            });
+
+        });
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="jquery-1.12.0.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/tabletools/2.2.4/js/dataTables.tableTools.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/tabletools/2.2.2/swf/copy_csv_xls_pdf.swf"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+    </script>
+}
+
+
+

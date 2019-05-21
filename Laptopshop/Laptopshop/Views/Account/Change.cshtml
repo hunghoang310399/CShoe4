@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Change Password";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ValidationSummary(true)
+@using (Html.BeginForm())
+{
+    <div class="login">
+        <div class="main-agileits">
+            <div class="form-w3agile">
+                <h3>Thay đổi mật khẩu</h3>
+                <strong>@ViewBag.message</strong>
+                <form action="#" method="post">
+                    <div class="key">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <input type="text" name="Id" class="form-control" placeholder="Id">
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="key">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" name="CurrentPassword" class="form-control" placeholder="CurrentPassword">
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="key">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" name="NewPassword" class="form-control" placeholder="NewPassword">
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="key">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <input type="password" name="ConfirmNewPassword" class="form-control" placeholder="ConfirmNewPassword">
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Change">
+                </form>
+            </div>
+        </div>
+    </div>
+}
+@*<h2>Change Password</h2>
+    @Html.ValidationSummary(true)
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <label>Username</label>
+            @Html.TextBox("Id", null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Current Password</label>
+            @Html.TextBox("CurrentPassword", null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>New Password</label>
+            @Html.TextBox("NewPassword", null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Confirm New Password</label>
+            @Html.TextBox("ConfirmNewPassword", null, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary">
+                <span class="glyphicon glyphicon-check"></span>
+                Change
+            </button>
+        </div>
+
+    }*@
+
