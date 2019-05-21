@@ -25,7 +25,10 @@
 
         var id = $(this).attr("data-add-to-cart");
 
-        $.ajax({
+        $.ajax(
+           
+            {
+                
             url: "/Cart/Add",
             data: { id: id },
             success: function (response) {
