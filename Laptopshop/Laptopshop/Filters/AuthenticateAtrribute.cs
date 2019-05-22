@@ -14,9 +14,11 @@ namespace Laptopshop.Filters
            
             if (!XUser.Authenticated && !XUser.AuthenticatedFacebook)
             {
-                var Uri = HttpContext.Current.Request.Url.AbsoluteUri;
+                var Uri = HttpContext.Current.Request.Url.AbsolutePath;
                 HttpContext.Current.Session["RequestUrl"] = Uri;
-                HttpContext.Current.Response.Redirect("/Account/Login");
+
+                var url = new UrlHelper(HttpContext.Current.Request.RequestContext);
+                HttpContext.Current.Response.Redirect(url.Action("Login", "Account"));
             }
             
         }

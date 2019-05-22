@@ -20,6 +20,11 @@
     <![endif]-->
     <!-- Favicons -->
     <link rel="shortcut icon" href="/Content/MyStyle/assets/ico/favicon.ico">
+    <script>
+        CART_ADD = '@Url.Action("Add", "Cart")';
+        CART_REMOVE = '@Url.Action("Remove", "Cart")';
+        CART_UPDATE = '@Url.Action("Update", "Cart")';
+    </script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")

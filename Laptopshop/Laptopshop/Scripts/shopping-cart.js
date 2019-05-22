@@ -26,7 +26,7 @@
         var id = $(this).attr("data-add-to-cart");
 
         $.ajax({
-            url: "/Cart/Add",
+            url: CART_ADD,
             data: { id: id },
             success: function (response) {
                 $("#cart-cnt").html(response.Count);
@@ -46,7 +46,7 @@
     $("[data-remove-from-cart]").click(function () {
         var id = $(this).attr("data-remove-from-cart");
         $.ajax({
-            url: "/Cart/Remove",
+            url: CART_REMOVE,
             data: { id: id },
             success: function (response) {
                 $("#cart-cnt").html(response.Count);
@@ -63,7 +63,7 @@
         var qty = $(this).val();
         console.log('client: ' + qty);
         $.ajax({
-            url: "/Cart/Update",
+            url: CART_UPDATE,
             data: { id: id, newqty: qty },
             success: function (response) {
                 $("#cart-cnt").html(response.Count);
