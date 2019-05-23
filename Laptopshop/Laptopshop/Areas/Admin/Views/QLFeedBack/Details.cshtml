@@ -1,0 +1,59 @@
+﻿@model Laptopshop.Models.Feedback
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Chi tiết phản hồi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Họ và tên 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+           Nội dung
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            số điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+           Tình trạng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FBStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDFeedback }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

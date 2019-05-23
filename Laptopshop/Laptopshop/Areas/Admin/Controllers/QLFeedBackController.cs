@@ -59,5 +59,15 @@ namespace Laptopshop.Areas.Admin.Controllers
                 return View(ghcs);
             }
         }
+        public ActionResult Details(int Id)
+        {
+            var user = Session["user"];
+            if (user == null)
+            {
+                return RedirectToAction("LoginAD", "LoginAdmin");
+            }
+            var model = db.Feedbacks.Find(Id);
+            return View(model);
+        }
     }
 }

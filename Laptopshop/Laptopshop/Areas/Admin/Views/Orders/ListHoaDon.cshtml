@@ -24,8 +24,12 @@
                     <th>
                         @Html.DisplayNameFor(model => model.OrderDate)
                     </th>
+
                     <th>
                         @Html.DisplayNameFor(model => model.RequireDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amount)
                     </th>
                     <th>
                         Tình trạng giao hàng
@@ -35,7 +39,7 @@
             </thead>
             <tbody>
                 @foreach (var item in Model)
-            {
+                {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Id)
@@ -50,8 +54,11 @@
                         @Html.DisplayFor(modelItem => item.RequireDate)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
                         @{if
-                                (item.DeliveryStatus == "Delivering")
+                                    (item.DeliveryStatus == "Delivering")
                             {
 
                                 <span class="label label-success"> @Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
@@ -60,6 +67,8 @@
                             {
                                 <span class="label label-danger">@Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
                             }
+
+
                         }
                     </td>
 
@@ -68,19 +77,28 @@
                             if (item.DeliveryStatus == "Delivering")
                             {
                                 @Html.ActionLink("Cập nhật trạng thái giao hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
-                            }
 
+                            }
                             else if (item.DeliveryStatus == "Đã giao hàng và khách hàng đã thanh toán đủ")
                             {
 
                             }
+                            else if (item.DeliveryStatus == "Đơn hàng đã hủy ")
+                            {
+
+                            }
+                            else if (item.DeliveryStatus == "Đã chỉnh sữa đơn hàng ")
+                            {
+
+                            }
+
                         }
                         | @Html.ActionLink("Chi tiết đặt hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
 
 
                     </td>
                 </tr>
-        }
+                }
             </tbody>
             <tfoot>
                 <tr>
@@ -95,6 +113,9 @@
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.RequireDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Amount)
                     </th>
                     <th>
                         Tình trạng giao hàng
@@ -131,4 +152,7 @@
             });
         });
     </script>
-}
+   
+    
+    
+    }

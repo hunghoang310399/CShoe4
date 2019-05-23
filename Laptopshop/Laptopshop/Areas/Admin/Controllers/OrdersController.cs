@@ -47,6 +47,8 @@ namespace Laptopshop.Areas.Admin.Controllers
             {
                 Order hd = db.Orders.Find(ghcs.Id);
                 hd.DeliveryStatus = "Đã giao hàng và khách hàng đã thanh toán đủ";
+                hd.DeliveryStatus = "Đơn hàng đã hủy";
+                hd.DeliveryStatus = "Đã chỉnh sũa đơn hàng";
                 db.SaveChanges();
                 return RedirectToAction("ListHoaDon");
             }
