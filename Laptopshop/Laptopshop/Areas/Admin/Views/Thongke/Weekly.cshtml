@@ -21,7 +21,7 @@
             <strong> Tuần:</strong> <input type="text" id="From" name="date" />
 
             <input type="submit" value="View" />
-            <h3><strong>Tổng doanh thu: </strong> <strong style="color:red">@Model.Sum(b => b.Sum)$</strong></h3>
+            <h3><strong>Tổng doanh thu: </strong> <strong style="color:red">@string.Format("{0:0,0}" ,@Model.Sum(b => b.Sum)) VNĐ</strong></h3>
         </fieldset>
        
 }

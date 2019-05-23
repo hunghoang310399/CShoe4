@@ -74,11 +74,12 @@
 
                     <td>
                         @{
-                            if (item.DeliveryStatus == "Delivering")
+                            if (item.DeliveryStatus == "Delivering" || item.DeliveryStatus == "Đã chỉnh sũa đơn hàng")
                             {
                                 @Html.ActionLink("Cập nhật trạng thái giao hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
 
                             }
+                            
                             else if (item.DeliveryStatus == "Đã giao hàng và khách hàng đã thanh toán đủ")
                             {
 
@@ -87,10 +88,7 @@
                             {
 
                             }
-                            else if (item.DeliveryStatus == "Đã chỉnh sữa đơn hàng ")
-                            {
 
-                            }
 
                         }
                         | @Html.ActionLink("Chi tiết đặt hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
