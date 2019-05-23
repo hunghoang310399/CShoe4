@@ -59,7 +59,7 @@
                                 </div>
                                 @if (Model.Discount == 0)
                                 {
-                                <p class="price item_price">@string.Format("{0:0,0}", Model.UnitPrice) VNĐ</p>
+                                    <p class="price item_price">@string.Format("{0:0,0}", Model.UnitPrice) VNĐ</p>
                                 }
                                 else
                                 {
@@ -68,10 +68,13 @@
                                 }
 
                                 <div class="description">
-                                    <p><span>Giả giá : </span><strong style="color:red">@(Model.Discount * 100)%</strong></p>
+                                    <p><span>Giảm giá : </span><strong style="color:red">@(Model.Discount * 100)%</strong></p>
                                 </div>
                                 <div class="description">
                                     <p><span>Nhà cung cấp : </span><strong style="color:red">@Model.Supplier.Name</strong></p>
+                                </div>
+                                <div class="description">
+                                    <p><span>Kích cở giày : </span><strong style="color:red">@Model.Size.Size1</strong></p>
                                 </div>
                                 <div class="description">
                                     <p><span>Mô tả : </span><strong style="color:red">@Model.Description</strong></p>

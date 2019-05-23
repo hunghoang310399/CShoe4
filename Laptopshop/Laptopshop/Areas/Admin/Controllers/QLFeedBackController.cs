@@ -51,6 +51,7 @@ namespace Laptopshop.Areas.Admin.Controllers
             {
                 Feedback hd = db.Feedbacks.Find(ghcs.IDFeedback);
                 hd.FBStatus = "Đã xử lý";
+                hd.FBStatus = "Đang xử lý";
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

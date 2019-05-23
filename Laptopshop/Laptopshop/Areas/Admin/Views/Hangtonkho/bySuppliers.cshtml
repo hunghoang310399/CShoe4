@@ -6,25 +6,25 @@
 <table class="table table-bordered">
     <tr>
         <th>
-            Nhóm
+            Đơn Vị 
         </th>
         <th>
 
-            Đếm
+            Số lượng
         </th>
         <th>
 
-            Tổng
+            Giá Trị
         </th>
         <th>
 
-            Tối thiểu
+            Giá trị Tối thiểu
         </th>
         <th>
-            Tối đa
+            Giá trị Tối đa
         </th>
         <th>
-            Trung bình
+            Giá trị Trung bình
 
         </th>
 
@@ -41,16 +41,16 @@
                 @item.Count
             </td>
             <td>
-                @item.Sum
+                @string.Format("{0:0,0}", @item.Sum) VNĐ
             </td>
             <td>
-                @item.Min
+                @string.Format("{0:0,0}", @item.Min) VNĐ
             </td>
             <td>
-                @item.Max
+                @string.Format("{0:0,0}", @item.Max) VNĐ
             </td>
             <td>
-                @item.Avg
+                @string.Format("{0:0,0}", @item.Avg ) VNĐ
             </td>
 
 

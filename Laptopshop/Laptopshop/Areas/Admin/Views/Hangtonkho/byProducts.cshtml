@@ -6,25 +6,25 @@
 <table class="table table-bordered">
     <tr>
         <th>
-            Nhóm
+           Tên sản phẩm
         </th>
         <th>
 
-            Đếm
+            Số lượng
         </th>
         <th>
 
-            Tổng
+            Giá Trị
         </th>
         <th>
 
-            Tối thiểu
+           Giá trị Tối thiểu
         </th>
         <th>
-            Tối đa
+            Giá trị Tối đa
         </th>
         <th>
-            Trung bình
+            Giá trị Trung bình
 
         </th>
 
@@ -33,28 +33,29 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @item.Group
-            </td>
-            <td>
-                @item.Count
-            </td>
-            <td>
-                @item.Sum
-            </td>
-            <td>
-                @item.Min
-            </td>
-            <td>
-                @item.Max
-            </td>
-            <td>
-                @item.Avg
-            </td>
+    <tr>
+        <td>
+            @item.Group
+        </td>
+        <td>
+            @item.Count
+        </td>
+        <td>
+            @string.Format("{0:0,0}", @item.Sum) VNĐ
+        </td>
+        <td>
+            @string.Format("{0:0,0}", @item.Min) VNĐ
+        </td>
+        <td>
+            @string.Format("{0:0,0}", @item.Max) VNĐ
+        </td>
+        <td>
+            @string.Format("{0:0,0}", @item.Avg) VNĐ
+        </td>
 
 
-        </tr>
+
+    </tr>
     }
 
 </table>

@@ -28,7 +28,7 @@
                         @Html.DisplayNameFor(model => model.Phone)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.FBStatus)
+                        Trạng thái
                     </th>
                     <th></th>
                 </tr>
@@ -49,10 +49,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Phone)
                     </td>
-                  
+
                     <td>
-                        @{if 
-                                (item.FBStatus == "Chờ xử lý")
+                        @{if (item.FBStatus == "Đã xử lý")
 
                             {
 
@@ -60,27 +59,18 @@
                             }
                             else
                             {
-                               <span class="label label-danger"> @Html.DisplayFor(modelItem => item.FBStatus) </span>
+                                <span class="label label-danger"> @Html.DisplayFor(modelItem => item.FBStatus) </span>
                             }
                         }
                     </td>
-
                     <td>
-                        @{
-                            if (item.FBStatus == "Chờ xử lý")
-                            {
-                                @Html.ActionLink("Cập nhật ", "Edit", new { id = item.IDFeedback }, new { @class = "btn btn-info" })
-                            }
-
-                            else if (item.FBStatus == "Đã xử lý")
-                            {
-
-                            }
-                        }
-                        @Html.ActionLink("Xem chi tiết", "Details", new { id = item.IDFeedback }, new { @class = "btn btn-info" })|@Html.ActionLink("Chi tiết Phản hồi", "Details", new { id = item.IDFeedback }, new { @class = "btn btn-warning" })
+                     
+                         @Html.ActionLink("Cập nhật ", "Edit", new { id = item.IDFeedback }, new { @class = "btn btn-info" })
+                         @Html.ActionLink("Xem chi tiết", "Details", new { id = item.IDFeedback }, new { @class = "btn btn-info" })
 
 
                     </td>
+
                 </tr>
 
             }

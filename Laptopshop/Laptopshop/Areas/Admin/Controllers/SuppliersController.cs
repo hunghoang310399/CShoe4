@@ -170,7 +170,7 @@ namespace Laptopshop.Areas.Admin.Controllers
             Supplier supplier = db.Suppliers.Find(id);
             db.Suppliers.Remove(supplier);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index" , "Suppliers");
         }
 
         protected override void Dispose(bool disposing)
