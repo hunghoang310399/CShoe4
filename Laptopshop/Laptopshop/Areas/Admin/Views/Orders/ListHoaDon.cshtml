@@ -9,6 +9,7 @@
             Danh sách hóa đơn
         </p>
     </div>
+    @Html.ActionLink("Tạo Đơn Hàng", "Details",  new { @class = "btn btn-warning" })
     <!-- /.box-header -->
     <div class="box-body">
         <table id="example" class="display" style="width:100%">
@@ -40,62 +41,62 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Id)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Customer.Fullname)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.OrderDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RequireDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Amount)
-                    </td>
-                    <td>
-                        @{if
-                                    (item.DeliveryStatus == "Delivering")
-                            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Customer.Fullname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequireDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            @{if
+                                          (item.DeliveryStatus == "Delivering")
+                                {
 
-                                <span class="label label-success"> @Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
-                            }
-                            else
-                            {
-                                <span class="label label-danger">@Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
-                            }
+                                    <span class="label label-success"> @Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
+                                }
+                                else
+                                {
+                                    <span class="label label-danger">@Html.DisplayFor(modelItem => item.DeliveryStatus)</span>
+                                }
 
-
-                        }
-                    </td>
-
-                    <td>
-                        @{
-                            if (item.DeliveryStatus == "Delivering" || item.DeliveryStatus == "Đã chỉnh sũa đơn hàng")
-                            {
-                                @Html.ActionLink("Cập nhật trạng thái giao hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
 
                             }
-                            
-                            else if (item.DeliveryStatus == "Đã giao hàng và khách hàng đã thanh toán đủ")
-                            {
+                        </td>
+
+                        <td>
+                            @{
+                                if (item.DeliveryStatus == "Delivering" || item.DeliveryStatus == "Đã chỉnh sũa đơn hàng")
+                                {
+                                    @Html.ActionLink("Cập nhật trạng thái giao hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
+
+                                }
+
+                                else if (item.DeliveryStatus == "Đã giao hàng và khách hàng đã thanh toán đủ")
+                                {
+
+                                }
+                                else if (item.DeliveryStatus == "Đơn hàng đã hủy ")
+                                {
+
+                                }
+
 
                             }
-                            else if (item.DeliveryStatus == "Đơn hàng đã hủy ")
-                            {
-
-                            }
+                            | @Html.ActionLink("Chi tiết đặt hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
 
 
-                        }
-                        | @Html.ActionLink("Chi tiết đặt hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
-
-
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
                 }
             </tbody>
             <tfoot>

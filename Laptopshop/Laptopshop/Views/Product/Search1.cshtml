@@ -164,7 +164,7 @@
 
                                                             @if (item.Discount == 0)
                                                             {
-                                                                <p> <h3><em style="color:red" class="item_price">$@item.UnitPrice</em></h3></p>
+                                                                <p> <h3><em style="color:red" class="item_price">@string.Format("{0:0,0}", @item.UnitPrice) VNĐ</em></h3></p>
                                                             }
                                                             else
                                                             {
@@ -174,7 +174,7 @@
                                                                     <h3>
                                                                         <strike><em class="item_price">$@item.UnitPrice</em></strike>
 
-                                                                        <em style="color:red" class="item_price">$@(item.UnitPrice * (1 - item.Discount))</em>
+                                                                        <em style="color:red" class="item_price">>@string.Format("{0:0,0}", (item.UnitPrice * (1 - item.Discount))) VNĐ</em>
                                                                     </h3>
                                                                 </p>
 

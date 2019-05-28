@@ -1247,6 +1247,7 @@
     <Content Include="images\products\imgNB2.jpg" />
     <Content Include="images\products\imgNB3.jpg" />
     <Content Include="images\products\imgV1.jpg" />
+    <Content Include="images\products\product.png" />
     <Content Include="images\promo_icon.gif" />
     <Content Include="images\Registration.png" />
     <Content Include="images\rssicon.png" />

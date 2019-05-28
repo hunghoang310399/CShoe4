@@ -133,18 +133,7 @@ namespace Laptopshop.Areas.Admin.Controllers
             try
             {
                 // upload hinh
-                var f = Request.Files["UpPhoto"];
-                if (f.ContentLength > 0)
-                {
-
-                    product.Image = DateTime.Now.Ticks + "-" + f.FileName;
-                    var path = "~/images/products/" + product.Image;
-                    f.SaveAs(Server.MapPath(path));
-                }
-                else
-                {
-                    product.Image = "product.png";
-                }
+            
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
