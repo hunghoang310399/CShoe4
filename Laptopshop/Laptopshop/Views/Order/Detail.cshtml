@@ -48,10 +48,10 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <h2>Order Chi tiết </h2>
+                    <h2>Chi tiết đơn hàng </h2>
 
                     <fieldset>
-                       
+
                         <div class="row">
                             @Html.HiddenFor(m => m.Id)
                             <div class="form-group col-sm-6">
@@ -93,6 +93,12 @@
                                 @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 4, @readonly = true })
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label>Trạng thái đơn hàng</label>
+                                @Html.TextAreaFor(m => m.DeliveryStatus, new { @class = "form-control", rows = 4, @readonly = true })
+                            </div>
+                        </div>
                     </fieldset>
 
                     <fieldset>
@@ -102,11 +108,11 @@
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th><strong style="color:mediumvioletred">Name</strong></th>
-                                    <th><strong style="color:mediumvioletred">Unit Price</strong></th>
-                                    <th><strong style="color:mediumvioletred">Discount</strong></th>
-                                    <th><strong style="color:mediumvioletred">Quantity</strong></th>
-                                    <th><strong style="color:mediumvioletred">Amount</strong></th>
+                                    <th><strong style="color:mediumvioletred">Tên</strong></th>
+                                    <th><strong style="color:mediumvioletred">Đơn giá</strong></th>
+                                    <th><strong style="color:mediumvioletred">Khuyến mãi</strong></th>
+                                    <th><strong style="color:mediumvioletred">Số lượng</strong></th>
+                                    <th><strong style="color:mediumvioletred">Số tiền</strong></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -117,13 +123,13 @@
                                 <td><strong style="color:black">@detail.UnitPrice</strong></td>
                                 <td><strong style="color:black">@detail.Discount</strong></td>
                                 <td><strong style="color:black">@detail.Quantity</strong></td>
-                                <td><strong style="color:black">@(detail.Quantity * detail.UnitPrice * (1 - detail.Discount)) VNĐ</strong></td>
+                                <td><strong style="color:black">@string.Format("{0:0,0}",(detail.Quantity * detail.UnitPrice * (1 - detail.Discount)) )VNĐ</strong></td>
 
                             </tr>
 }
                                 <tr>
-                                    <th colspan="4" style="text-align:right"><strong style="color:red">Total Amount:</strong></th>
-                                    <th style="color:black">  <center>@Model.OrderDetails.Sum(b => b.UnitPrice * b.Quantity * (1 - b.Discount)) VNĐ</center> </th>
+                                    <th colspan="4" style="text-align:right"><strong style="color:red">Thành tiền:</strong></th>
+                                    <th style="color:black">  <center>@string.Format("{0:0,0}", Model.OrderDetails.Sum(b => b.UnitPrice * b.Quantity * (1 - b.Discount))) VNĐ</center> </th>
                                    
                                 </tr>
                             </tbody>

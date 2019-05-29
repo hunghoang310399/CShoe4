@@ -64,7 +64,7 @@
             Thông tin giao hàng
         </label>
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
             @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -80,11 +80,11 @@
     </div>
 
     <div class="form-group">
-        <center><input type="submit" value="Hủy đơn hàng" class="btn btn-warning" /></center>
-        
-        <center><input type="submit" value="Chỉnh sữa" class="btn btn-default" /></center>
 
-        <center><input type="submit" value="Đã giao hàng và khách hàng đã thanh toán đủ" class="btn btn-success" /></center>
+
+        <button type="submit" id="btnS" name="Command" value="TT1">Đã giao hàng và thanh toán đủ</button>
+        <button type="submit" id="btnC" name="Command" value="TT2">Giao hàng không thành công</button>
+        <button type="submit" id="btnC" name="Command" value="TT3">Hủy đơn hàng</button>
 
     </div>
 </div>

@@ -56,7 +56,7 @@
                         <td>
                             @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info" }) |
                             @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
-                            <button class="btn btn-danger"><a href="~/Admin/Suppliers/Delete?id=@item.Id" onclick="return confirm('Are you sure want to delete?');">Delete</a></button>
+                            <button class="btn btn-danger"><a href="~/Admin/Suppliers/Delete?id=@item.Id" onclick="return confirm('Có chắc là bạn muốn xóa');">Delete</a></button>
                         </td>
                     </tr>
                 }

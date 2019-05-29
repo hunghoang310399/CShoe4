@@ -103,11 +103,11 @@
                     <div class="row nn-thumb" style="padding:10px;">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Your Comments</a></li>
-                            <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Products Of The Same Supplier</a></li>
+                            <li role="presentation" class="active"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Bình luận</a></li>
+                            <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Sản phẩm cùng thương hiệu</a></li>
 
 
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Viewed Products</a></li>
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Các sản phẩm đã xem</a></li>
 
                         </ul>
 
@@ -159,7 +159,7 @@
             <!--Product Description-->
         </div>
     </div>
-
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
 <!--single-->
 <div class="new-arrivals-w3agile">
     <div class="container">
@@ -189,8 +189,6 @@
                                 <div class="starbox small ghosting"> </div>
                             </div>
                             <div class="women">
-                                <h6><a href="~/Product/Detail/@item.Id">Details</a></h6>
-
                                 @if (item.Discount == 0)
                                 {
                                     <p><h3><em style="color:red" class="item_price">@string.Format("{0:0,0}", @item.UnitPrice) VNĐ</em></h3></p>

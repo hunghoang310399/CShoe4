@@ -41,14 +41,25 @@ namespace Laptopshop.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Order ghcs)
+        public ActionResult Edit(Order ghcs , string Command)
         {
             if (ModelState.IsValid)
             {
                 Order hd = db.Orders.Find(ghcs.Id);
-                hd.DeliveryStatus = "Đã giao hàng và khách hàng đã thanh toán đủ";
-                hd.DeliveryStatus = "Đơn hàng đã hủy";
-                hd.DeliveryStatus = "Đã chỉnh sũa đơn hàng";
+                if (Command == "TT1")
+                {
+                    hd.DeliveryStatus = "Đã giao hàng và khách hàng đã thanh toán đủ";
+                }
+
+                if (Command == "TT2")
+                {
+                    hd.DeliveryStatus = "Giao hàng không thành công";
+                }
+                if (Command == "TT3")
+                {
+                    hd.DeliveryStatus = "Đã hủy đơn hàng";
+                }
+
                 db.SaveChanges();
                 return RedirectToAction("ListHoaDon");
             }

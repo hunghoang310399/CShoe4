@@ -88,7 +88,7 @@
 <div class="new-arrivals-w3agile">
     <div class="container">
         <h2 class="tittle">
-            Products Purchased
+            Sản phẩm đã mua
         </h2>
         <div class="arrivals-grids">
 
@@ -111,7 +111,7 @@
                             <div class="starbox small ghosting"> </div>
                         </div>
                         <div class="women">
-
+                            <h6><a href="~/Product/Detail/@item.Id">Chi Tiết</a></h6>
 
                             @if (item.Discount == 0)
                             {
@@ -125,12 +125,14 @@
                                     <h3>
                                         <strike><em class="item_price">@string.Format("{0:0,0}", @item.UnitPrice) VNĐ</em></strike>
 
-                                        <em style="color:red" class="item_price">>@string.Format("{0:0,0}", (@item.UnitPrice * (1 - item.Discount))) VN</em>
+                                        <em style="color:red" class="item_price">@string.Format("{0:0,0}", (@item.UnitPrice * (1 - item.Discount))) VNĐ</em>
                                     </h3>
                                 </p>
 
                             }
-                            <h6><a href="~/Product/Detail/@item.Id">Chi tiết</a></h6>
+                            <button class="my-cart-b item_add" data-add-to-cart="@item.Id">
+                                Thêm vào giỏ hàng
+                            </button>
 
                         </div>
 

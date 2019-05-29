@@ -45,11 +45,21 @@ namespace Laptopshop.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Feedback ghcs)
+        public ActionResult Edit(Feedback ghcs , string Command)
         {
             if (ModelState.IsValid)
             {
                 Feedback hd = db.Feedbacks.Find(ghcs.IDFeedback);
+                if (Command == "TT1")
+                {
+                    hd.FBStatus = "Đã xử lý";
+                }
+
+                if (Command == "TT2")
+                {
+                    hd.FBStatus = "Đã xử lý";
+                }
+                
                 hd.FBStatus = "Đã xử lý";
                 hd.FBStatus = "Đang xử lý";
                 db.SaveChanges();

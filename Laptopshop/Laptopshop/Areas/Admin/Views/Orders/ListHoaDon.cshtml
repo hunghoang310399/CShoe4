@@ -9,28 +9,27 @@
             Danh sách hóa đơn
         </p>
     </div>
-    @Html.ActionLink("Tạo Đơn Hàng", "Details",  new { @class = "btn btn-warning" })
     <!-- /.box-header -->
     <div class="box-body">
         <table id="example" class="display" style="width:100%">
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.Id)
+                       Mã đơn hàng
                     </th>
                     <th>
 
                         Họ và tên
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.OrderDate)
+                       Ngày đặt hàng
                     </th>
 
                     <th>
-                        @Html.DisplayNameFor(model => model.RequireDate)
+                        Ngày giao hàng
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Amount)
+                        Tổng tiền
                     </th>
                     <th>
                         Tình trạng đơn hàng
@@ -75,21 +74,16 @@
 
                         <td>
                             @{
-                                if (item.DeliveryStatus == "Delivering" || item.DeliveryStatus == "Đã chỉnh sũa đơn hàng")
+                                if (item.DeliveryStatus == "Delivering" )
                                 {
                                     @Html.ActionLink("Cập nhật trạng thái giao hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
 
                                 }
 
-                                else if (item.DeliveryStatus == "Đã giao hàng và khách hàng đã thanh toán đủ")
+                                else 
                                 {
 
                                 }
-                                else if (item.DeliveryStatus == "Đơn hàng đã hủy ")
-                                {
-
-                                }
-
 
                             }
                             | @Html.ActionLink("Chi tiết đặt hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
@@ -101,24 +95,26 @@
             </tbody>
             <tfoot>
                 <tr>
+                    
                     <th>
-                        @Html.DisplayNameFor(model => model.Id)
+                        Mã đơn hàng
                     </th>
                     <th>
+
                         Họ và tên
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.OrderDate)
+                        Ngày đặt hàng
+                    </th>
+
+                    <th>
+                        Ngày giao hàng
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.RequireDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Amount)
+                        Tổng tiền
                     </th>
                     <th>
                         Tình trạng đơn hàng
-
                     </th>
                     <th></th>
                 </tr>

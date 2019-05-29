@@ -53,7 +53,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th style="color:red"><center>Id</center></th>
+                                <th style="color:red"><center>Mã đơn hàng</center></th>
                                 <th style="color:red"><center>Khách hàng</center></th>
                                 <th style="color:red"><center>Địa chỉ</center></th>
                                 <th style="color:red"><center>Ngày đặt hàng</center></th>
@@ -69,7 +69,7 @@
                                     <td style="color:black">@o.Customer.Id</td>
                                     <td style="color:black">@o.Address</td>
                                     <td style="color:black">@Html.FormatValue(o.OrderDate, "{0:yyyy-MM-dd}")</td>
-                                    <td style="color:black">@Html.FormatValue(o.Amount, "{0:c}")</td>
+                                    <td style="color:black">@Html.FormatValue( o.Amount, "{0:0,0}") VNĐ</td>
                                     <th>
                                         <a href="~/Order/Detail/@o.Id" class="btn btn-sm btn-primary">
                                             <span class="glyphicon glyphicon-search"></span>

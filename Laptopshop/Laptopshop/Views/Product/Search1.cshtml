@@ -160,7 +160,7 @@
                                                             <div class="starbox small ghosting"> </div>
                                                         </div>
                                                         <div class="women">
-                                                            <h6><a href="~/Product/Detail/@item.Id">Details</a></h6>
+                                                            <h6><a href="~/Product/Detail/@item.Id">Chi Tiết</a></h6>
 
                                                             @if (item.Discount == 0)
                                                             {
@@ -179,7 +179,9 @@
                                                                 </p>
 
                                                             }
-                                                                <h6><a href="~/Product/Detail/@item.Id">Chi tiết</a></h6>
+                                                            <button class="my-cart-b item_add" data-add-to-cart="@item.Id">
+                                                                Thêm vào giỏ hàng
+                                                            </button>
 
                                                         </div>
                                                     </div>

@@ -37,7 +37,7 @@ namespace Laptopshop.Areas.Admin.Controllers
 
                 Session["user"] = user;
 
-                return RedirectToAction("Index", "Products");
+                return RedirectToAction("Index", "HomeAd");
 
             }
 
