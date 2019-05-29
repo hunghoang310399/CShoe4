@@ -15,6 +15,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="~/Content 3/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="~/Content 3/css/font-awesome.css" rel="stylesheet" />
     <!--css-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="~/Scripts/jquery.shorten.1.0.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -28,7 +30,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--search jQuery-->
     <script src="~/Content 3/js/responsiveslides.min.js"></script>
     <script src="~/Scripts/shopping-cart.js"></script>
-
+    <meta charset="UTF-8">
     <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
     <script>
         CART_ADD = '@Url.Action("Add", "Cart")';
@@ -44,6 +46,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 namespace: "callbacks",
                 pager: true,
             });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(".panel-heading").shorten({
+            "showChars": 20,
         });
     </script>
     <!--mycart-->

@@ -18,7 +18,9 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Tên sản phẩm
+                </label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
@@ -26,7 +28,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.IDSize, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Kích cỡ
+                </label>
                 <div class="col-md-10">
                     @Html.DropDownList("IDSize", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.IDSize, "", new { @class = "text-danger" })
@@ -34,7 +38,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Giá bán ra
+                </label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
@@ -42,7 +48,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Hình ảnh
+                </label>
                 <div class="col-md-10">
                     <input type="file" name="UpPhoto" class="form-control" />
                     @Html.HiddenFor(m => m.Image)
@@ -50,7 +58,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.ProductDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Ngày tạo sản phẩm
+                </label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.ProductDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
                     @Html.ValidationMessageFor(model => model.ProductDate, "", new { @class = "text-danger" })
@@ -58,7 +68,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Available, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Có sẵn
+                </label>
                 <div class="col-md-10">
                     <div class="checkbox">
                         @Html.EditorFor(model => model.Available)
@@ -68,14 +80,18 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Mô tả
+                </label>
                 <div class="col-md-10">
                     <textarea name="Description"></textarea>
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.SupplierId, "SupplierId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Thương hiệu
+                </label>
                 <div class="col-md-10">
                     @Html.DropDownList("SupplierId", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.SupplierId, "", new { @class = "text-danger" })
@@ -83,7 +99,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Số lượng hàng
+                </label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
@@ -91,7 +109,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Discount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Giảm giá
+                </label>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Discount, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.Discount, "", new { @class = "text-danger" })
@@ -99,7 +119,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Special, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Hàng đặc biệt
+                </label>
                 <div class="col-md-10">
                     <div class="checkbox">
                         @Html.EditorFor(model => model.Special)
@@ -109,7 +131,9 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Latest, htmlAttributes: new { @class = "control-label col-md-2" })
+                <label class = "control-label col-md-2">
+                    Sản phẩm mới
+                </label>
                 <div class="col-md-10">
                     <div class="minimal-red">
                         @Html.EditorFor(model => model.Latest)

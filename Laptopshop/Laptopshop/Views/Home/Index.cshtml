@@ -28,10 +28,13 @@
 
                 </div>
             </div>
-          
+
             <div class="core-slider_control-nav"></div>
         </div>
     </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="~/Scripts/jquery.shorten.1.0.js"></script>
+
     <link href="~/Content 3/css/coreSlider.css" rel="stylesheet" type="text/css" />
     <script src="~/Content 3/js/coreSlider.js"></script>
     <script>
@@ -96,7 +99,7 @@
                             <div class="starbox small ghosting"> </div>
                         </div>
                         <div class="women">
-                            <h6><a href="~/Product/Detail/@item.Id">Chi tiết</a></h6>
+                            
                             @if (item.Discount == 0)
                             {
                                 <p> <h3><em style="color:red" class="item_price">@string.Format("{0:0,0}", @item.UnitPrice) VNĐ</em></h3></p>
@@ -114,9 +117,7 @@
                                 </p>
 
                             }
-                            <button class="my-cart-b item_add" data-add-to-cart="@item.Id">
-                                Thêm vào giỏ hàng
-                            </button>
+                                <h6><a href="~/Product/Detail/@item.Id">Chi tiết</a></h6>
                         </div>
 
                     </div>
@@ -127,6 +128,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(".panel-heading").shorten({
+        "showChars": 20,
+    });
+</script>
 <!--new-arrivals-->
 <center>
     <div class="pagination">

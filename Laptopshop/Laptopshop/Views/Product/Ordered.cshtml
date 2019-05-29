@@ -79,6 +79,12 @@
         </div>
 
     }*@
+<script src="~/Scripts/jquery.shorten.1.0.js"></script>
+<script type="text/javascript">
+    $(".panel-heading").shorten({
+        "showChars": 20,
+    });
+</script>
 <div class="new-arrivals-w3agile">
     <div class="container">
         <h2 class="tittle">
@@ -105,7 +111,7 @@
                             <div class="starbox small ghosting"> </div>
                         </div>
                         <div class="women">
-                            <h6><a href="~/Product/Detail/@item.Id">Chi tiết</a></h6>
+
 
                             @if (item.Discount == 0)
                             {
@@ -124,9 +130,7 @@
                                 </p>
 
                             }
-                            <button class="my-cart-b item_add" data-add-to-cart="@item.Id">
-                               Thêm vào giỏ hàng
-                            </button>
+                            <h6><a href="~/Product/Detail/@item.Id">Chi tiết</a></h6>
 
                         </div>
 
