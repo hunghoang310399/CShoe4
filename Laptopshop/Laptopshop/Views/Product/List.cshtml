@@ -80,12 +80,8 @@
         </div>
 
     }*@
-<script src="~/Scripts/jquery.shorten.1.0.js"></script>
-<script type="text/javascript">
-        $(".panel-heading").shorten({
-            "showChars": 20,
-        });
-</script>
+
+
 
 <div class="content">
     <div class="products-agileinfo">
@@ -175,7 +171,7 @@
 
                                                             <p>
                                                                 <h3>
-                                                                    <strike><em class="item_price">@string.Format("{0:0,0}", @item.UnitPrice) VNĐ</em></strike>
+                                                                   
 
                                                                     <em style="color:red" class="item_price">@string.Format("{0:0,0}", (@item.UnitPrice * (1 - item.Discount))) VNĐ</em>
                                                                 </h3>
@@ -208,7 +204,11 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+    $(".panel-heading").shorten({
+        "showChars": 20,
+    });
+</script>
 
 <center>
     <div class="pagination">

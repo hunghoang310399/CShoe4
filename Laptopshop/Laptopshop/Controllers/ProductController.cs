@@ -50,7 +50,7 @@ namespace Laptopshop.Controllers
                         .ToList();
                     break;
                 case "LATEST":
-                    model = db.Products.Where(p => p.Latest).ToList();
+                    model = db.Products.Where(p => p.Latest).OrderByDescending(p=>p.Id).ToList();
                     break;
                 case "SPECIAL":
                     model = db.Products

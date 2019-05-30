@@ -34,15 +34,15 @@
             <thead>
                 <tr>
                     <th>
-                        Date
+                        Ngày
                     </th>
                     <th>
-                        Total Products
+                        Tổng Sản Phẩm
                     </th>
                     <th>
-                        Total Revenue
+                        Tổng Doanh Thu
                     </th>
-                    <th>
+                    @*<th>
                         Min Price
                     </th>
                     <th>
@@ -50,7 +50,7 @@
                     </th>
                     <th>
                         Avg Price
-                    </th>
+                    </th>*@
 
 
 
@@ -70,7 +70,7 @@
                         @string.Format("{0:0,0}", item.Sum) VNĐ
 
                     </td>
-                    <td>
+                    @*<td>
                         @string.Format("{0:0,0}", item.Min) VNĐ
                     </td>
                     <td>
@@ -79,7 +79,7 @@
                     </td>
                     <td>
                         @string.Format("{0:0,0}", item.Avg) VNĐ
-                    </td>
+                    </td>*@
 
                 </tr>
 }
@@ -88,22 +88,13 @@
             <tfoot>
                 <tr>
                     <th>
-                        Date
+                        Ngày
                     </th>
                     <th>
-                        Total Products
+                        Tổng Sản Phẩm
                     </th>
                     <th>
-                        Total Revenue
-                    </th>
-                    <th>
-                        Min Price
-                    </th>
-                    <th>
-                        Max Price
-                    </th>
-                    <th>
-                        Avg Price
+                        Tổng Doanh Thu
                     </th>
 
 
@@ -117,7 +108,7 @@
                         @Model.Sum(b => b.Count)
                     </th>
                     <th>
-                        @Model.Sum(b => b.Sum)$
+                        @Model.Sum(b => b.Sum)
                     </th>
                     <th>
 
